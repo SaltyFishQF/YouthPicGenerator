@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://service.jiangsugqt.org/youth/static/css/reset.css">
+    <title>我正在参加江苏省“青年大学习”</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            user-select: none;
+            -webkit-user-select: none;
+            font-size: calc(100vw / 3.75)
+        }
+
+        #app {
+            position: relative;
+            height: 100%;
+            background-image: url('https://service.jiangsugqt.org/youth/static/image/background.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto 100%;
+            padding-bottom: 50px;
+        }
+
+        .icon {
+            position: absolute;
+            top: 0.2rem;
+            left: 50%;
+            width: 2.38rem;
+            height: 1.32rem;
+            transform: translateX(-50%);
+            background-image: url('https://service.jiangsugqt.org/youth/static/image/icon.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+        }
+
+        .term {
+            position: absolute;
+            top: 1.56rem;
+            left: 50%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            width: 2.32rem;
+            height: 0.78rem;
+            transform: translateX(-50%);
+            color: #FAEDAF;
+            background-image: url('https://service.jiangsugqt.org/youth/static/image/term.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .term span {
+            font-size: 0.12rem;
+            padding-bottom: 0.09rem;
+            transform: scale(0.8);
+        }
+
+        h3 {
+            margin-top: 2.54rem;
+            text-align: center;
+            font-size: 0.18rem;
+            font-weight: 800;
+            color: rgba(250, 237, 175, 1);
+        }
+
+        .tip {
+            margin-top: 0.52rem;
+            margin-left: 0.26rem;
+            margin-bottom: 0;
+            font-size: 0.15rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .input-wrapper {
+            position: relative;
+            margin: 0.1rem auto 0.12rem;
+            width: 3.25rem;
+            height: 0.44rem;
+            background: rgba(255, 255, 255, 1);
+            border: 0.02rem solid rgba(255, 195, 93, 1);
+            border-radius: 0.22rem;
+            overflow: hidden;
+        }
+
+        .input-wrapper input {
+            position: absolute;
+            top: 0.08rem;
+            left: 0;
+            padding-left: 0.27rem;
+            width: 100%;
+            height: 0.24rem;
+            line-height: 0.24rem;
+            outline: none;
+            border: none;
+            font-size: 0.14rem;
+        }
+
+        .next {
+            margin: 0 auto;
+            width: 3.25rem;
+            height: 0.44rem;
+            line-height: 0.44rem;
+            background: rgba(255, 255, 255, 1);
+            border: 0.02rem solid rgba(255, 195, 93, 1);
+            border-radius: 0.22rem;
+            font-size: 0.18rem;
+            text-align: center;
+            color: rgba(190, 39, 25, 1);
+            background-color: #FFE165;
+        }
+
+        .group {
+            position: absolute;
+            width: 100%;
+            left: 50%;
+            bottom: 0.12rem;
+            width: 2.09rem;
+            height: 0.15rem;
+            transform: translateX(-50%);
+            background-image: url('https://service.jiangsugqt.org/youth/static/image/group.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+        }
+    </style>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?d9eb198974267d7605c6cd6a09aeb590";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+<div id="app">
+    <table></table><!-- 防止外边距溢出 -->
+    <div class="icon"></div>
+    <div class="term">
+        <span id="term">第七季第四期</span>
+    </div>
+    <h3>省部属高校团委</h3>
+    <form action="/youth/lesson/enroll" method="post">
+        <div class="tip">你的姓名</div>
+        <div class="input-wrapper">
+            <input type="text" placeholder="请输入姓名" name="name" value="" id="name"/>
+            <input type="hidden" name="category_id" value="3"/>
+            <input type="hidden" name="organize_id" value="1788"/>
+        </div>
+        <div class="next">下一步</div>
+        <div class="group"></div>
+    </form>
+    <input type="text" id="copy_text" value="$Ew66YEC40aW$" style="opacity:0;font-size:12px;">
+</div>
+<script type="text/javascript" src="https://service.jiangsugqt.org/lists/jquery-2.1.4.min.js"></script>
+<script>
+    $('.next').click(function () {
+        window.location.href = `endddddddddddddddddddddd.html?s=${getQueryVariable("s")}&e=${getQueryVariable("e")}`
+    });
+
+</script>
+
+<script>
+    let numChar=['零','一','二','三','四','五','六','七','八','九']
+    let numUnit=['','十','百','千']         //权位
+    let numSection=['','万','亿','万亿','亿亿']     //节权位
+    formatSection=(num)=>{
+        let arr=(num+'').split('').reverse();
+        let str=''
+        for(let i=0;i<arr.length;i++){          //将0-9转化为零到九
+            let char=arr[i]==0?numChar[0]:numChar[arr[i]]+numUnit[i]   //当数字为0时不加权位，非零加权位
+            str=char+str;
+        }
+        let s=str.replace(/零+/g,'零').replace(/零+$/,'')       //将多个零合并为一个零，并剔除尾端的零
+        return s;
+    }
+    formatNum=(num,str)=>{      //将字符串按个数拆分
+        let len=Math.ceil(str.length/num);
+        let arr=[]
+        for(let i=0;i<len;i++){
+            let reverseStr=str.split('').reverse().join('')
+            let s=reverseStr.slice(i*num,i*num+num).split('').reverse().join('')
+            arr.unshift(s)
+        }
+        return arr
+    }
+    numberTranToCN=(num)=>{
+        let arr=formatNum(4,num+'')         //将数字每四个拆分一次
+        let list=[]
+        for(let i=0;i<arr.length;i++){
+            let str=formatSection(arr[i])
+            list.push(str)
+
+        }
+        let reverseList=list.reverse();
+        for(let j=0;j<reverseList.length;j++){
+            reverseList[j]+=numSection[j]
+        }
+        return reverseList.reverse().join('')
+    }
+
+    function getQueryVariable(variable)
+    {
+        var query = decodeURI(decodeURI(window.location.search.substring(1)))
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+        }
+        return(false);
+    }
+    var name = getQueryVariable("name");
+    name = name.replace(/\\/g, "%");
+    name = unescape(name);
+    $("#name").val(name);
+    $("#term").html(`第${numberTranToCN(getQueryVariable("s"))}季第${numberTranToCN(getQueryVariable("e"))}期`)
+</script>
+</body>
+
+</html>

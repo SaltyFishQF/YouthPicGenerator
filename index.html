@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name=”viewport” content=”width=device-width,initial-scale=2,minimum-scale=1,maximum-scale=3,user-scalable=0"/>
+    <title>SnapFucker</title>
+    <link rel="stylesheet" href="//res.wx.qq.com/open/libs/weui/1.1.3/weui.min.css">
+    <!--    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">-->
+</head>
+<body>
+<div class="container" id="container">
+    <div class="page form">
+        <div class="page__hd">
+            <h1 class="page__title">SnapFucker</h1>
+        </div>
+    </div>
+    <div class="page form_page">
+        <div class="weui-form">
+            <div class="weui-form__text-area">
+                <div class="weui-form__control-area">
+                    <div class="weui-cells__group weui-cells__group_form">
+                        <!--                    <div class="weui-cells__title">表单组标题</div>-->
+                        <div class="weui-cells weui-cells_form">
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+                                <div class="weui-cell__bd">
+                                    <input id="name" class="weui-input" placeholder="填写要显示在页面上的姓名">
+                                </div>
+                            </div>
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd"><label class="weui-label">季</label></div>
+                                <div class="weui-cell__bd">
+                                    <input id="s" class="weui-input" placeholder="第几季？填写数字" type="number"
+                                           pattern="[0-9]">
+                                </div>
+                            </div>
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd"><label class="weui-label">期</label></div>
+                                <div class="weui-cell__bd">
+                                    <input id="e" class="weui-input" placeholder="第几期？填写数字" type="number"
+                                           pattern="[0-9]">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weui-form__opr-area">
+                    <a class="weui-btn weui-btn_primary" href="javascript:gooooooo()" id="showTooltips">确定</a>
+                </div>
+
+                <div class="weui-form__extra-area">
+                    <div class="weui-footer">
+                        <p class="weui-footer__links">
+                            <a href="javascript:void(0);" class="weui-footer__link">底部链接文本</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    function gooooooo() {
+        var name = $("#name").val();
+        var s = $("#s").val();
+        var e = $("#e").val();
+        window.location.href = `snappinggggggggg.html?name=${name}&s=${s}&e=${e}`;
+    }
+</script>
+</body>
+</html>
