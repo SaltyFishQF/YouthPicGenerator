@@ -41,6 +41,12 @@
                                            pattern="[0-9]">
                                 </div>
                             </div>
+                            <div class="weui-cell">
+                                <div class="weui-cell__hd"><label class="weui-label">期</label></div>
+                                <div class="weui-cell__bd">
+                                    <input id="unit" class="weui-input" placeholder="所在单位" >
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -66,7 +72,8 @@
         var name = $("#name").val();
         var s = $("#s").val();
         var e = $("#e").val();
-        window.location.href = `snappinggggggggg.html?name=${name}&s=${s}&e=${e}`;
+        var unit = $("#unit").val();
+        window.location.href = `snappinggggggggg.html?name=${name}&s=${s}&e=${e}unit=${unit}`;
     }
 </script>
 </body>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -20,7 +22,7 @@
         #app {
             position: relative;
             height: 100%;
-            background-image: url('https://service.jiangsugqt.org/youth/static/image/background.jpg');
+            background-image: url('https://service.jiangsugqt.org//youth/static/image/background.jpg');
             background-repeat: no-repeat;
             background-position: center;
             background-size: auto 100%;
@@ -34,7 +36,7 @@
             width: 2.38rem;
             height: 1.32rem;
             transform: translateX(-50%);
-            background-image: url('https://service.jiangsugqt.org/youth/static/image/icon.png');
+            background-image: url('https://service.jiangsugqt.org//youth/static/image/icon.png');
             background-repeat: no-repeat;
             background-size: 100% 100%;
             background-position: center;
@@ -51,7 +53,7 @@
             height: 0.78rem;
             transform: translateX(-50%);
             color: #FAEDAF;
-            background-image: url('https://service.jiangsugqt.org/youth/static/image/term.png');
+            background-image: url('https://service.jiangsugqt.org//youth/static/image/term.png');
             background-repeat: no-repeat;
             background-size: 100% 100%;
         }
@@ -103,18 +105,34 @@
             font-size: 0.14rem;
         }
 
-        .next {
+        .buttons {
+            width: 90%;
+            margin: auto;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .next, .prev {
             margin: 0 auto;
-            width: 3.25rem;
+            width: 1rem;
             height: 0.44rem;
             line-height: 0.44rem;
-            background: rgba(255, 255, 255, 1);
             border: 0.02rem solid rgba(255, 195, 93, 1);
             border-radius: 0.22rem;
             font-size: 0.18rem;
             text-align: center;
             color: rgba(190, 39, 25, 1);
             background-color: #FFE165;
+        }
+
+        .prev {
+            float: left;
+        }
+
+        .next {
+            float: right;
         }
 
         .group {
@@ -125,43 +143,57 @@
             width: 2.09rem;
             height: 0.15rem;
             transform: translateX(-50%);
-            background-image: url('https://service.jiangsugqt.org/youth/static/image/group.png');
+            background-image: url('https://service.jiangsugqt.org//youth/static/image/group.png');
             background-repeat: no-repeat;
             background-size: 100% 100%;
             background-position: center;
         }
+
+        .confirm-user-info {
+            padding: 10px;
+            background: #ffffff;
+            font-size: 16px;
+            line-height: 28px;
+            color: #333333;
+            border: 0.02rem solid rgba(255, 195, 93, 1);
+            width: 90%;
+            box-sizing: border-box;
+            margin: 15px auto 15px;
+            border-radius: 5px;
+        }
+
+        .confirm-user-info p {
+            padding: 0;
+        }
     </style>
 
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?d9eb198974267d7605c6cd6a09aeb590";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
 </head>
 
-<body>
-<div id="app">
+<body><div id="app">
     <table></table><!-- 防止外边距溢出 -->
     <div class="icon"></div>
     <div class="term">
-        <span id="term">第七季第四期</span>
+        <span id="term1">第八季第一期</span>
     </div>
-    <h3>省部属高校团委</h3>
+    <h3></h3>
     <form action="/youth/lesson/enroll" method="post">
-        <div class="tip">你的姓名</div>
-        <div class="input-wrapper">
-            <input type="text" placeholder="请输入姓名" name="name" value="" id="name"/>
-            <input type="hidden" name="category_id" value="3"/>
-            <input type="hidden" name="organize_id" value="1788"/>
+        <div class="tip">请确认您的个人信息</div>
+        <div class="confirm-user-info">
+            <p><span>当前课程：</span><span id="term2"></span></p>
+            <p><span>您的姓名：</span><span id="name"></span></p>
+            <p><span>所在单位：</span><span id="unit"></span></p>
         </div>
-        <div class="next">下一步</div>
+
+        <div class="buttons">
+            <div class="prev">修改信息</div>
+            <div class="next">确定</div>
+            <div class="clear"></div>
+        </div>
+
         <div class="group"></div>
     </form>
 </div>
+
 <script type="text/javascript" src="https://service.jiangsugqt.org/lists/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="main.js"></script>
 <script>
@@ -172,12 +204,18 @@
 </script>
 
 <script>
-
     var name = getQueryVariable("name");
     name = name.replace(/\\/g, "%");
     name = unescape(name);
-    $("#name").val(name);
-    $("#term").html(`第${numberTranToCN(getQueryVariable("s"))}季第${numberTranToCN(getQueryVariable("e"))}期`)
+
+    var unit = getQueryVariable("unit");
+    unit = unit.replace(/\\/g, "%");
+    unit = unescape(unit);
+
+    $("#name").html(name);
+    $("#term1").html(`第${numberTranToCN(getQueryVariable("s"))}季第${numberTranToCN(getQueryVariable("e"))}期`)
+    $("#term2").html(`第${numberTranToCN(getQueryVariable("s"))}季第${numberTranToCN(getQueryVariable("e"))}期`)
+    $("#unit").html(unit)
 </script>
 </body>
 
