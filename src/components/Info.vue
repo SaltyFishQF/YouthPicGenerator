@@ -1,16 +1,67 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<template>
+  <div id="app">
+    <table></table><!-- 防止外边距溢出 -->
+    <div class="icon"></div>
+    <div class="term">
+        <span id="term1">第八季第一期</span>
+    </div>
+    <h3></h3>
+    <form action="/youth/lesson/enroll" method="post">
+        <div class="tip">请确认您的个人信息</div>
+        <div class="confirm-user-info">
+            <p><span>当前课程：</span><span id="term2">{{ course }}</span></p>
+            <p><span>您的姓名：</span><span id="name">{{ name }}</span></p>
+            <p><span>所在单位：</span><span id="unit">{{ org }}</span></p>
+        </div>
 
+        <div class="buttons">
+            <div class="prev">修改信息</div>
+            <div class="next" @click="nextStep()">确定</div>
+            <div class="clear"></div>
+        </div>
 
+        <div class="group"></div>
+    </form>
+</div>
+</template>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="https://service.jiangsugqt.org/youth/static/css/reset.css">
-    <title>我正在参加江苏省“青年大学习”</title>
-    <style>
-        html,
+<script>
+import {formatSection, formatNum, numberTranToCN, setMetaTitle} from '../js/util.js'
+
+export default {
+  data () {
+    return {
+      name: '',
+      org: '',
+      course: ''
+    }
+  },
+
+  created() {
+    let data = this.$route.params.form_data
+    this.name = data.input_name
+    this.org = data.input_organization
+    this.course = '第' + numberTranToCN(data.term[0]) + '季第' + numberTranToCN(data.term[1]) + '期'
+    setMetaTitle('我正在参加江苏省“青年大学习”')
+  },
+
+  methods: {
+    nextStep() {
+      this.$router.push({
+        name: 'end',
+        params: {
+          term: this.$route.params.form_data.term,
+          course: this.course
+        }
+      })
+    }
+  }
+}
+
+</script>
+
+<style>
+html,
         body {
             width: 100%;
             height: 100%;
@@ -165,58 +216,4 @@
         .confirm-user-info p {
             padding: 0;
         }
-    </style>
-
-</head>
-
-<body><div id="app">
-    <table></table><!-- 防止外边距溢出 -->
-    <div class="icon"></div>
-    <div class="term">
-        <span id="term1">第八季第一期</span>
-    </div>
-    <h3></h3>
-    <form action="/youth/lesson/enroll" method="post">
-        <div class="tip">请确认您的个人信息</div>
-        <div class="confirm-user-info">
-            <p><span>当前课程：</span><span id="term2"></span></p>
-            <p><span>您的姓名：</span><span id="name"></span></p>
-            <p><span>所在单位：</span><span id="unit"></span></p>
-        </div>
-
-        <div class="buttons">
-            <div class="prev">修改信息</div>
-            <div class="next">确定</div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="group"></div>
-    </form>
-</div>
-
-<script type="text/javascript" src="https://service.jiangsugqt.org/lists/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="main.js"></script>
-<script>
-    $('.next').click(function () {
-        window.location.href = `endddddddddddddddddddddd.html?s=${getQueryVariable("s")}&e=${getQueryVariable("e")}`
-    });
-
-</script>
-
-<script>
-    var name = getQueryVariable("name");
-    name = name.replace(/\\/g, "%");
-    name = unescape(name);
-
-    var unit = getQueryVariable("unit");
-    unit = unit.replace(/\\/g, "%");
-    unit = unescape(unit);
-
-    $("#name").html(name);
-    $("#term1").html(`第${numberTranToCN(getQueryVariable("s"))}季第${numberTranToCN(getQueryVariable("e"))}期`)
-    $("#term2").html(`第${numberTranToCN(getQueryVariable("s"))}季第${numberTranToCN(getQueryVariable("e"))}期`)
-    $("#unit").html(unit)
-</script>
-</body>
-
-</html>
+</style>
