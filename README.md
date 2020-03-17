@@ -1,4 +1,4 @@
-# youth_pic_generator
+# YouthPicGenerator
 
 > The vue impelemention of youth lession screemshot generator
 
