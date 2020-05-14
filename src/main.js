@@ -9,6 +9,10 @@ import Form from "./components/Form"
 import Search from "./components/Search"
 import Info from "./components/Info"
 import End from "./components/End"
+import axios from 'axios'
+Vue.prototype.$axios = axios
+
+
 
 Vue.use(VueRouter)
 

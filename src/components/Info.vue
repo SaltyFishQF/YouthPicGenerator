@@ -41,7 +41,15 @@ export default {
     let data = this.$route.params.form_data
     this.name = data.input_name
     this.org = data.input_organization
-    this.course = '第' + numberTranToCN(data.term[0]) + '季第' + numberTranToCN(data.term[1]) + '期'
+
+    let name = data.termName[0]
+    if (name.slice(0,5) == "青年大学习") {
+      name = name.slice(5, name.length)
+    } else if (name.slice(0,7) == "“青年大学习”"){
+      name = name.slice(7, name.length)
+    }
+
+    this.course = name
     setMetaTitle('我正在参加江苏省“青年大学习”')
   },
 
@@ -50,7 +58,7 @@ export default {
       this.$router.push({
         name: 'end',
         params: {
-          term: this.$route.params.form_data.term,
+          form_data: this.$route.params.form_data,
           course: this.course
         }
       })

@@ -5,7 +5,7 @@
 <script>
 import {setMetaTitle} from '../js/util.js'
 export default {
-  
+
   data () {
     return {
       bg: ''
@@ -13,16 +13,13 @@ export default {
   },
 
   created() {
-    let convert = ['0', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'];
-
-    let t = this.$route.params.term
-
-    this.bg = "http://h5.cyol.com/special/daxuexi/daxuexi" + t[0] + convert[t[1]] + t[1] + "/images/end.jpg"
-    setMetaTitle('“青年大学习” ' + this.$route.params.course)
+    let data = this.$route.params.form_data
+    this.bg = data.termUrl + "/images/end.jpg"
+    setMetaTitle(data.termName)
   },
 
   methods: {
-   
+
   }
 }
 
