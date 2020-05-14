@@ -1,3 +1,6 @@
+# 公告
+- 2020-5-14：目前第9期修改了图片规则，不过解决方案已经制定好了，近期更新。由于大学习可能更新修改算法，建议watch本仓库，所有通知今日以后会及时发布。
+
 # YouthPicGenerator
 
 > The vue impelemention of youth lession screemshot generator
