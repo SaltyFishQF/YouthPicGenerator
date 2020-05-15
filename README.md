@@ -4,7 +4,8 @@
 - [Build Setup](https://github.com/SaltyFishQF/YouthPicGenerator#build-setup)
 
 # 公告
-- 2020-5-14：目前第9期修改了图片规则，不过解决方案已经制定好了，近期更新。由于大学习可能更新修改算法，建议watch本仓库，所有通知今日以后会及时发布。
+- 2020-5-15：适配第九季。新增了一个Golang后端来爬取服务器信息。
+- 2020-5-14：目前第九季修改了图片规则，不过解决方案已经制定好了，近期更新。由于大学习可能更新修改算法，建议watch本仓库，所有通知今日以后会及时发布。
 
 # YouthPicGenerator
 
