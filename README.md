@@ -16,24 +16,8 @@
 1. 建议在微信浏览器中打开，可以达到以假乱真的效果。[Demo部署地址](youth.logan-qiu.cn)
 2. 填写姓名、学校信息，并选择要生成截图的期号。(个人信息只需填写一次，会保存在浏览器缓存中)
 3. 点击确定，截图!
-<center class="half">
-    <img src="http://youth.logan-qiu.cn/preview/step1.jpg" width="200"/><img src="http://youth.logan-qiu.cn/preview/step1.jpg" width="200"/><img src="http://youth.logan-qiu.cn/preview/step1.jpg" width="200"/>
-</center>
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+<div style="display: block;">
+  <img width="30%" src="http://youth.logan-qiu.cn/preview/step1.jpg">
+  <img width="30%" src="http://youth.logan-qiu.cn/preview/step2.jpg">
+  <img width="30%" src="http://youth.logan-qiu.cn/preview/step3.jpg">
+</div>
