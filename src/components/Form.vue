@@ -1,19 +1,19 @@
 <template>
-  <div class="app">
+  <div class="container">
     <group>
       <x-input title="姓名" v-model="form_data.input_name" text-align="right"></x-input>
-      <popup-picker ref="picker" title="期号" :data="termList" v-model="form_data.termName"
+      <popup-picker ref="picker" title="期号" :data="termList" v-model="this.form_data.termName"
                     @on-change='onChoosedTerm'></popup-picker>
       <x-input title="组织" v-model="form_data.input_organization" text-align="right"></x-input>
     </group>
     <x-button type="primary" @click.native="nextStep()">填好了，去截图！</x-button>
 
     <footer class="footer">
-      <div class="container">
-        <p class="pull-left">
+      <div>
+        <p>
           @ SaltyFishQF 2020
         </p>
-        <p class="pull-right">
+        <p>
           本项目GitHub地址：<a href="https://github.com/SaltyFishQF/YouthPicGenerator">YouthPicGenerator</a>,
           若在使用过程中发现任何问题，请开issue说明。更新说明将写在在Github的Readme公告中。
         </p>
@@ -42,6 +42,7 @@
           input_name: '',
           termUrl: [],
           termName: '',
+          pickedName: '',
           input_organization: '',
         },
         termList: null,
@@ -65,6 +66,7 @@
       },
 
       onChoosedTerm(res) {
+        console.log(res)
         this.form_data.termUrl = res
         this.form_data.termName = [this.$refs.picker.getNameValues()]
       },
@@ -104,11 +106,11 @@
   }
 
   .footer {
-    height: 60px;
+    height: 70vh;
     background-color: #f5f5f5;
     border-top: 1px solid #ddd;
     padding-top: 20px;
-    margin-top: 10px;
-    color: #636363;;
+    color: #636363;
+    font-size: 16px;
   }
 </style>

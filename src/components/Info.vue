@@ -48,6 +48,10 @@ export default {
     } else if (name.slice(0,7) == "“青年大学习”"){
       name = name.slice(7, name.length)
     }
+    if (name.slice(name.length-3,name.length) == "来啦！") {
+      name = name.slice(0, name.length-3)
+    }
+
 
     this.course = name
     setMetaTitle('我正在参加江苏省“青年大学习”')
